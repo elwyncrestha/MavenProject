@@ -1,0 +1,4 @@
+com\itn\controller\CourseController.class
+com\itn\controller\AdminController.class
+com\itn\modal\Course.class
+com\itn\controller\IndexController.class
