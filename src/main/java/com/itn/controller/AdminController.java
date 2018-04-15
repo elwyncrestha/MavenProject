@@ -5,6 +5,7 @@
  */
 package com.itn.controller;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 /**
@@ -16,5 +17,10 @@ public class AdminController {
     @RequestMapping(value={"/admin/home","/admin/dashboard"},method=RequestMethod.GET)
     public String adminMain(){
         return "adminHome";
+    }
+    
+    @GetMapping(value = "/admin_login")
+    public String displayError(){
+        return "errorPage";
     }
 }

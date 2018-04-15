@@ -114,14 +114,14 @@
             <h3>Contact for more information about the institute</h3>
             <p>Enter your name and email</p>
 
-            <form action="${cp}/frontend/subscription/add" method="post" class="form-inline">
+            <form action="${cp}/admin/subscription/add" method="post" class="form-inline">
                 <div class="form-group">
                     <label for="subscription">Name</label>
-                    <input type="text" name="name" class="form-control" id="subscription" placeholder="Your full name">
+                    <input type="text" name="subscriberName" class="form-control" id="subscription" placeholder="Your full name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="text" name="email" class="form-control" id="email" placeholder="Your email">
+                    <input type="text" name="subscriberEmail" class="form-control" id="email" placeholder="Your email">
                 </div>
                 <input type="submit" class="btn btn-default" value="Contact">
                 <hr />
@@ -459,14 +459,14 @@
         <h3>Subscribe for notifications via email</h3>
         <p>Enter your name and email</p>
 
-        <form action="${cp}/frontend/subscription/add" method="post" class="form-inline">
+        <form action="${cp}/admin/subscription/add" method="post" class="form-inline">
             <div class="form-group">
                 <label for="subscription0">Name</label>
-                <input type="text" name="name" class="form-control" id="subscription0" placeholder="Your full name">
+                <input type="text" name="subscriberName" class="form-control" id="subscription0" placeholder="Your full name">
             </div>
             <div class="form-group">
                 <label for="email0">Email address</label>
-                <input type="text" name="email" class="form-control" id="email0" placeholder="Your email">
+                <input type="text" name="subscriberEmail" class="form-control" id="email0" placeholder="Your email">
             </div>
             <input type="submit" class="btn btn-default" value="Subscribe">
         </form>
