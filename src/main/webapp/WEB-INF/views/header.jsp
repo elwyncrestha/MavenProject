@@ -95,7 +95,7 @@
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Subscription">
-                <a class="nav-link" href="${pageContext.request.contextPath}/frontend/subscription/display">
+                <a class="nav-link" href="${pageContext.request.contextPath}/admin/subscription/display">
                     <i class="fa fa-fw fa-bell"></i>
                     <span class="nav-link-text">Subscriptions</span>
                 </a>

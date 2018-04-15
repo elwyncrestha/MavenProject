@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "course_tbl")
 public class Course implements Serializable{
-    private static final long serialVersionUID = 1L;    //class value while serializing
+    private static final long serialVersionUID = 2L;    //class value while serializing
     
     @Column(name = "courseId")
     @Id
