@@ -5,20 +5,27 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd"
 >
 
+    <!--<security:http pattern = "/admin/login" security="none" />-->
     
     <security:http auto-config="true" use-expressions="true">
         <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
         
         <security:form-login username-parameter="username" password-parameter="password"
-                             default-target-url="/admin/dashboard" authentication-failure-url="/admin_login"
-                              login-processing-url="/login" /><!---login-page-removed-->
+                             default-target-url="/admin/dashboard" authentication-failure-url="/login/failure"
+                             login-page="/login" login-processing-url="/login" />
+        
+        <security:logout invalidate-session="true" delete-cookies="AppCookies"
+                         logout-url="/logout" logout-success-url="/index" />
     </security:http>
     
     <security:authentication-manager>
         <security:authentication-provider>
+<!--            <security:user-service>
+                <security:user name = "user" password="mypassword" authorities="ROLE_USER" />
+            </security:user-service>-->
             <security:jdbc-user-service data-source-ref="dataSource"
                                         users-by-username-query="select username, password, active from users_login where username=?"
-                                        authorities-by-username-query="select ue.username, r.authority from users_login as ue, user_role as r where ue.id=r.uId and username=?"
+                                        authorities-by-username-query="select ul.username, ur.authority from users_login as ul, user_role as ur where ul.id=ur.uId and username=?"
             />
         </security:authentication-provider>
     </security:authentication-manager>

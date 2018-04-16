@@ -32,7 +32,7 @@ public class IndexController {
     @Autowired
     StudentService studentService;
 
-    @RequestMapping(value = {"/index","logout/root"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/index"}, method = RequestMethod.GET)
     public String home(Model model, Model model1) {
         List<Course> listCourse = courseService.getAllCourses();
         List<Student> listStudent = studentService.getAllStudent();
