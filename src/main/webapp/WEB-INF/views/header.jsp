@@ -34,10 +34,15 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="User">
-                <a class="nav-link" href="${pageContext.request.contextPath}/register/display">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUser" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-user"></i>
-                    <span class="nav-link-text">Display Users</span>
+                    <span class="nav-link-text">Users</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="collapseUser">
+                    <li>
+                        <a href="${pageContext.request.contextPath}/admin/user/display">Display Users</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Course">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCourse" data-parent="#exampleAccordion">

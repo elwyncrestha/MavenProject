@@ -26,7 +26,7 @@ public class SubscriptionController {
     @Autowired
     SubscriptionService subscriptionService;
     
-    @RequestMapping(value = "/admin/subscription/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/subscription/add", method = RequestMethod.POST)
     public String addSubcriber(Model model, @RequestParam("subscriberName") String name, @RequestParam("subscriberEmail") String email) {
         Subscription subscription = new Subscription(name, email);
         int id = subscriptionService.insertSubscriber(subscription);

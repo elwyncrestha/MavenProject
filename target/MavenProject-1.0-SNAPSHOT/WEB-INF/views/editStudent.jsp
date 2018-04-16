@@ -8,82 +8,83 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <%--<%@ include file="pageHeader.jsp" %>--%><!---for-static-webpage--->
-    <jsp:include page="pageHeader.jsp">
-        <jsp:param name="title" value="IMS"></jsp:param>
-    </jsp:include><!----used for dynamic webpage---->
-</head>
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-<jsp:include page="header.jsp"></jsp:include>
+    <head>
+        <%--<%@ include file="pageHeader.jsp" %>--%><!---for-static-webpage--->
+        <jsp:include page="pageHeader.jsp">
+            <jsp:param name="title" value="IMS"></jsp:param>
+        </jsp:include><!----used for dynamic webpage---->
+    </head>
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+        <jsp:include page="header.jsp"></jsp:include>
 
-<div class="content-wrapper">
-    <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="">Student</a>
-            </li>
-            <li class="breadcrumb-item active">Edit</li>
-        </ol>
-        <div class="row">
-            <div class="col-12">
-                <h1>Edit student</h1>
-            </div>
-            <div class="container">
-                <div class="card card-register mx-auto mt-5">
-                    <div class="card-header">Edit Student Information</div>
-                    <div class="card-body">
-                        <form action="${pageContext.request.contextPath}/admin/student/edit" method="post">
-                            <div class="form-group">
-                                <label for="exampleInputId">Id</label>
-                                <input class="form-control" name="id" id="exampleInputId" type="text" value="${EditStudentDetails.get(0).id}" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputFirstName">First Name</label>
-                                <input class="form-control" name="firstName" id="exampleFirstInputName" type="text" value="${EditStudentDetails.get(0).firstName}">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputLastName">Name</label>
-                                <input class="form-control" name="lastName" id="exampleInputLastName" type="text" value="${EditStudentDetails.get(0).lastName}">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputCountry">Country</label>
-                                <select name="country" class="form-control" id="exampleInputCountry">
-                                    <option <c:if test="${EditStudentDetails.get(0).country.equals('Nepal')}">selected</c:if>>Nepal</option>
-                                    <option <c:if test="${EditStudentDetails.get(0).country.equals('India')}">selected</c:if>>India</option>
-                                    <option <c:if test="${EditStudentDetails.get(0).country.equals('China')}">selected</c:if>>China</option>
-                                    <option <c:if test="${EditStudentDetails.get(0).country.equals('USA')}">selected</c:if>>USA</option>
-                                    <option <c:if test="${EditStudentDetails.get(0).country.equals('UK')}">selected</c:if>>UK</option>
-                                    <option <c:if test="${EditStudentDetails.get(0).country.equals('Norway')}">selected</c:if>>Norway</option>
-                                    <option <c:if test="${EditStudentDetails.get(0).country.equals('Canada')}">selected</c:if>>Canada</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Gender</label>
-                                <div class="form-control">
-                                    <input name="gender" type="radio" value="Male"<c:if test="${EditStudentDetails.get(0).gender.equals('Male')}">checked</c:if>> Male &nbsp;
-                                    <input name="gender" type="radio" value="Female"<c:if test="${EditStudentDetails.get(0).gender.equals('Female')}">checked</c:if>> Female
+            <div class="content-wrapper">
+                <div class="container-fluid">
+                    <!-- Breadcrumbs-->
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="">Student</a>
+                        </li>
+                        <li class="breadcrumb-item active">Edit</li>
+                    </ol>
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Edit student</h1>
+                        </div>
+                        <div class="container">
+                            <div class="card card-register mx-auto mt-5">
+                                <div class="card-header">Edit Student Information</div>
+                                <div class="card-body">
+                                    <form action="${pageContext.request.contextPath}/admin/student/edit" method="post">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                                    <div class="form-group">
+                                        <label for="exampleInputId">Id</label>
+                                        <input class="form-control" name="id" id="exampleInputId" type="text" value="${EditStudentDetails.get(0).id}" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputFirstName">First Name</label>
+                                        <input class="form-control" name="firstName" id="exampleFirstInputName" type="text" value="${EditStudentDetails.get(0).firstName}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputLastName">Name</label>
+                                        <input class="form-control" name="lastName" id="exampleInputLastName" type="text" value="${EditStudentDetails.get(0).lastName}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputCountry">Country</label>
+                                        <select name="country" class="form-control" id="exampleInputCountry">
+                                            <option <c:if test="${EditStudentDetails.get(0).country.equals('Nepal')}">selected</c:if>>Nepal</option>
+                                            <option <c:if test="${EditStudentDetails.get(0).country.equals('India')}">selected</c:if>>India</option>
+                                            <option <c:if test="${EditStudentDetails.get(0).country.equals('China')}">selected</c:if>>China</option>
+                                            <option <c:if test="${EditStudentDetails.get(0).country.equals('USA')}">selected</c:if>>USA</option>
+                                            <option <c:if test="${EditStudentDetails.get(0).country.equals('UK')}">selected</c:if>>UK</option>
+                                            <option <c:if test="${EditStudentDetails.get(0).country.equals('Norway')}">selected</c:if>>Norway</option>
+                                            <option <c:if test="${EditStudentDetails.get(0).country.equals('Canada')}">selected</c:if>>Canada</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                            <div class="form-control">
+                                                <input name="gender" type="radio" value="Male"<c:if test="${EditStudentDetails.get(0).gender.equals('Male')}">checked</c:if>> Male &nbsp;
+                                            <input name="gender" type="radio" value="Female"<c:if test="${EditStudentDetails.get(0).gender.equals('Female')}">checked</c:if>> Female
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Hobby</label>
+                                            <div class="form-control">
+                                                <input name="hobbies" type="checkbox" value="Coding" <c:if test="${EditStudentDetails.get(0).hobbies.contains('Coding')}">checked</c:if>> Coding &nbsp;
+                                            <input name="hobbies" type="checkbox" value="Music" <c:if test="${EditStudentDetails.get(0).hobbies.contains('Music')}">checked</c:if>> Music &nbsp;
+                                            <input name="hobbies" type="checkbox" value="Dancing" <c:if test="${EditStudentDetails.get(0).hobbies.contains('Dancing')}">checked</c:if>> Dancing &nbsp;
+                                            <input name="hobbies" type="checkbox" value="Playing" <c:if test="${EditStudentDetails.get(0).hobbies.contains('Playing')}">checked</c:if>> Playing
+                                            </div>
+                                        </div>
+                                        <input type="submit" class="btn btn-primary btn-block" value="Change">
+                                    </form>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Hobby</label>
-                                <div class="form-control">
-                                    <input name="hobbies" type="checkbox" value="Coding" <c:if test="${EditStudentDetails.get(0).hobbies.contains('Coding')}">checked</c:if>> Coding &nbsp;
-                                    <input name="hobbies" type="checkbox" value="Music" <c:if test="${EditStudentDetails.get(0).hobbies.contains('Music')}">checked</c:if>> Music &nbsp;
-                                    <input name="hobbies" type="checkbox" value="Dancing" <c:if test="${EditStudentDetails.get(0).hobbies.contains('Dancing')}">checked</c:if>> Dancing &nbsp;
-                                    <input name="hobbies" type="checkbox" value="Playing" <c:if test="${EditStudentDetails.get(0).hobbies.contains('Playing')}">checked</c:if>> Playing
-                                </div>
-                            </div>
-                            <input type="submit" class="btn btn-primary btn-block" value="Change">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div><!---row-close---->
-    </div><!---container-fluid-close--->
+                        </div>
+                    </div><!---row-close---->
+                </div><!---container-fluid-close--->
 
-    <jsp:include page="footer.jsp"></jsp:include>
-</div><!---content-wrapper-close---->
-</body>
+            <jsp:include page="footer.jsp"></jsp:include>
+        </div><!---content-wrapper-close---->
+    </body>
 </html>
