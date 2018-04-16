@@ -32,7 +32,6 @@
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-primary" href="${pageContext.request.contextPath}/logout">Logout</a>
-                <a class="btn btn-info" href="${pageContext.request.contextPath}/logout/root">Root Logout</a>
             </div>
         </div>
     </div>
