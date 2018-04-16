@@ -114,7 +114,8 @@
             <h3>Contact for more information about the institute</h3>
             <p>Enter your name and email</p>
 
-            <form action="${cp}/admin/subscription/add" method="post" class="form-inline">
+            <form action="${cp}/subscription/add" method="post" class="form-inline">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 <div class="form-group">
                     <label for="subscription">Name</label>
                     <input type="text" name="subscriberName" class="form-control" id="subscription" placeholder="Your full name">
@@ -412,6 +413,7 @@
             </div>
             <div class="col-lg-8">
                 <form action="" class="form-horizontal">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     <div class="form-group">
                         <label for="user-name" class="col-lg-2 control-label">Name</label>
                         <div class="col-lg-10">
@@ -459,7 +461,8 @@
         <h3>Subscribe for notifications via email</h3>
         <p>Enter your name and email</p>
 
-        <form action="${cp}/admin/subscription/add" method="post" class="form-inline">
+        <form action="${cp}/subscription/add" method="post" class="form-inline">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             <div class="form-group">
                 <label for="subscription0">Name</label>
                 <input type="text" name="subscriberName" class="form-control" id="subscription0" placeholder="Your full name">

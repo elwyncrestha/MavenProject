@@ -5,6 +5,7 @@
  */
 package com.itn.modal;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "users_login")
-public class UserLogin {
+public class UserLogin implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
