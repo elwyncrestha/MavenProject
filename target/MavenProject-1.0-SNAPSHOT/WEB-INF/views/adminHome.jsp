@@ -14,6 +14,7 @@
         </jsp:include><!----used for dynamic webpage---->
     </head>
 
+    <!---time-script-->
     <script>
         function startTime() {
             var today = new Date();
@@ -23,7 +24,7 @@
             m = checkTime(m);
             s = checkTime(s);
             document.getElementById('txt').innerHTML =
-                    h + ":" + m + ":" + s;
+                    h + "hr : " + m + "m : " + s + "sec";
             var t = setTimeout(startTime, 500);
         }
         function checkTime(i) {
@@ -34,6 +35,8 @@
             return i;
         }
     </script>
+    
+    
 
     <body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="startTime()">
         <jsp:include page="header.jsp"></jsp:include>
@@ -56,7 +59,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 jumbotron">
-                        <h1>Current (GMT + 5:45) time is: <span id="txt"></span></h1>
+                        <h1>Current <span class="small">(GMT + 5:45)</span> time is: <span id="txt"></span></h1>
                     </div><!---well-close-->
                 </div><!---row-close-->
             </div><!---container-fluid-close--->
