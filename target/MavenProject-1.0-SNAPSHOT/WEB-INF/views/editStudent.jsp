@@ -63,8 +63,8 @@
                                         <div class="form-group">
                                             <label>Gender</label>
                                             <div class="form-control">
-                                                <input name="gender" type="radio" value="Male"<c:if test="${EditStudentDetails.get(0).gender.equals('Male')}">checked</c:if>> Male &nbsp;
-                                            <input name="gender" type="radio" value="Female"<c:if test="${EditStudentDetails.get(0).gender.equals('Female')}">checked</c:if>> Female
+                                                <input name="gender" type="radio" value="Male" <c:if test="${EditStudentDetails.get(0).gender.equals('Male')}">checked</c:if>> Male &nbsp;
+                                                <input name="gender" type="radio" value="Female" <c:if test="${EditStudentDetails.get(0).gender.equals('Female')}">checked</c:if>> Female
                                             </div>
                                         </div>
                                         <div class="form-group">

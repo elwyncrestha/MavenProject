@@ -25,6 +25,7 @@ com\itn\controller\UserController.class
 com\itn\dao\CourseDao.class
 com\itn\service\StudentService.class
 com\itn\serviceimpl\SubscriptionServiceImpl.class
+com\itn\controller\MailController.class
 com\itn\modal\Subscription.class
 com\itn\dao\UserDao.class
 com\itn\service\ContactService.class

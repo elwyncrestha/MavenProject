@@ -19,13 +19,15 @@
         <div class="card-body">
             <form action="${pageContext.request.contextPath}/login" method="post">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <span style="color: green">${LogoutSuccessful}</span>
+                <span style="color: red">${LoginFailed}</span>
                 <div class="form-group">
                     <label for="exampleInputUsername">Username</label>
-                    <input class="form-control" name="username" id="exampleInputUsername" type="text" placeholder="Enter username">
+                    <input class="form-control" name="username" id="exampleInputUsername" type="text" placeholder="Enter username" required="required">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword">Password</label>
-                    <input class="form-control" name="password" id="exampleInputPassword" type="password" placeholder="Enter password">
+                    <input class="form-control" name="password" id="exampleInputPassword" type="password" placeholder="Enter password" required="required">
                 </div>
                 <div class="form-group">
                     <div class="form-check">
