@@ -31,8 +31,9 @@ public class AdminController {
     }
 
     @GetMapping(value = "/login/failure")
-    public String displayError() {
-        return "errorPage";
+    public String displayError(Model model) {
+        model.addAttribute("LoginFailed", "Login failed !!!");
+        return "login";
     }
 
     @GetMapping(value = "/login")
@@ -41,12 +42,13 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response, Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        return "redirect:/login";//You can redirect wherever you want, but generally it's a good practice to show login screen again.
+        model.addAttribute("LogoutSuccessful", "Logout successful !!!");
+        return "login";//You can redirect wherever you want, but generally it's a good practice to show login screen again.
     }
     
     @RequestMapping(value = "/admin/events", method = RequestMethod.GET)

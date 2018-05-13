@@ -29,7 +29,7 @@ public class UserLogin implements Serializable{
     private String password;
     
     private int active;
-
+    
     public UserLogin() {
     }
 
